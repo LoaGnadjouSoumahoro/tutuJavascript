@@ -19,9 +19,9 @@ console.log(elementBody);
 
 const btn1 = document.querySelector('#btn-1');
 const btn2 = document.getElementById('btn-2');
-const answer = document.querySelector('p');
+const response = document.querySelector('p');
 
-console.log("answer");
+console.log("response");
 /**
  *Les événement sur le click
  dans un selector: il faut mettre . ou # pour préciser si l'élément est une classe ou un id
@@ -65,14 +65,14 @@ questionContainer.classList.toggle("question-clicked");
 
 btn1.addEventListener('click',()=>{
 // answer.style.visibility = "visible";
-answer.classList.add("show-response");
-answer.style.background = "green";
+response.classList.add("show-response");
+response.style.background = "green";
 })
 
 btn2.addEventListener('click',()=>{
 // answer.style.visibility = "visible";
-answer.classList.add("show-response");
-answer.style.background = "red";
+response.classList.add("show-response");
+response.style.background = "red";
 })
 
 /*Les priorité en JS
@@ -134,8 +134,32 @@ questionContainer.addEventListener("mouseout", ()=>{
 questionContainer.style.background = "pink";
 })
 
-Response.addEventListener("mouseover", ()=>{
-Response.style.transform = "rotate(2deg)";
+response.addEventListener("mouseover", ()=>{
+response.style.transform = "rotate(2deg)";
 })
 
 // ----------------------------------------
+// KeyPress
+/*
+ */
+const keypressContainer = document.querySelector(".keypress");
+const key = document.getElementById("key");
+// console.log(keypressContainer);
+// console.log('key');
+
+/*keypress: quand on press une touche du clavier
+e : récupére les infos quand on touche sur le clavier
+*/
+document.addEventListener('keypress', (e)=>{
+    /*e.key permet de récupérer la valeur de la touche pressée*/
+// console.log(e.key);
+// key.textContent = "voici du text";
+key.textContent = e.key;
+if(e.key === "j"){
+keypressContainer.style.background = "pink";
+} else if(e.key === "h"){
+    keypressContainer.style.background = "teal";
+}else{
+    keypressContainer.style.background = "blue";
+}
+})
