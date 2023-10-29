@@ -14,6 +14,8 @@ margin: 0;
 color: white;
 /* 200VH: donner 2 fois la taille de l'utilisateur, de l'écran */
 min-width: 200vh;
+/* overflow-x: hidden pour l'evenement mousedown */
+overflow-x: hidden;
 }
 .box{
 border: 6px solid white;
@@ -53,3 +55,23 @@ transform: translateX(-200px);
 }
 
 /* End CSS pour le JS sur event click */
+
+     /* Start effet mouse move  */
+    .mousemove{
+    height: 50px;
+    width: 50px;
+    border: 2px solid pink;
+    position: absolute;
+    border-radius: 50px;
+    /* left: 50%;
+    top: 50%; */
+    /* transform: pour centre le curseur de la souris au centre du cercle */
+    transform: translate(-50%, -50%);
+    /*pour que le cercle suit la sourie en décalage*/
+    transition: 0.3s ease;
+    /*z-index: -1: afin qu'il passe en dessous des autre élément. qui ont par défaut un z-index de 0  */
+    z-index: -1;
+    }
+
+
+     /* End effet mouse move  */
