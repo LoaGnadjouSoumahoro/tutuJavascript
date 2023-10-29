@@ -89,3 +89,53 @@ on ne pourra donner cette classe CSS #btn1 à un élément par classList
 //------------------------------------------------------------
 /*on déclare toutes les variable au dessus du code
  */
+
+/*
+ e: premier paramettre de l'evèment récupère touts les infos liés à l'évèment
+ */
+const mousemove = document.querySelector('.mousemove')
+// console.log('mousemose');
+window.addEventListener('mousemove', (e)=>{
+// console.log("MOUSEMOVE !!!");
+// console.log("mousemove");
+// console.log(e.target);
+/*e.pageX: est la position sur l'axe de x de la souris 
+*/ 
+mousemove.style.left = e.pageX +'px';
+mousemove.style.top = e.pageY +'px';
+
+})
+
+/*Evènement quand on appuis sur la souris */ 
+window.addEventListener("mousedown", ()=>{
+    // console.log("test");
+
+    /*translate(-25%, -25%): car transform = "scale(2) l'ecrase le transform du CSS. Il faut la recrire pour qu'elle soit prise en compte
+    */ 
+/*scale(2): fait grossir le cercle quand on appuie sur la souris */    
+    mousemove.style.transform = "scale(2) translate(-25%, -25%)";
+
+})
+window.addEventListener("mouseup", ()=>{
+   
+/*scale(1): fait revenir à sa taille initiale*/    
+    mousemove.style.transform = "scale(1) translate(-50%, -50%)";
+    mousemove.style.border ="2px solid teal";
+
+})
+
+/* Mouseenter: Evèment quand la souris survol une zone*/ 
+
+questionContainer.addEventListener('mouseenter', ()=>{
+questionContainer.style.background = "rgba(0,0,0,0.6)";
+})
+
+questionContainer.addEventListener("mouseout", ()=>{
+questionContainer.style.background = "pink";
+})
+
+Response.addEventListener("mouseover", ()=>{
+Response.style.transform = "rotate(2deg)";
+})
+
+// ----------------------------------------
